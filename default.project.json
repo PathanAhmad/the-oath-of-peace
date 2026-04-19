@@ -7,6 +7,10 @@
 			"$className": "ServerScriptService",
 			"TS": {
 				"$path": "out/server"
+			},
+			"Tests": {
+				"$path": "out/tests",
+				"$ignoreUnknownInstances": true
 			}
 		},
 		"ReplicatedStorage": {

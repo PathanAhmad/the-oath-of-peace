@@ -9,10 +9,15 @@
 		"lint": "eslint \"src/**/*.ts\"",
 		"format": "prettier --write \"src/**/*.ts\" \"*.json\"",
 		"format:check": "prettier --check \"src/**/*.ts\" \"*.json\"",
-		"check": "pnpm format:check && pnpm lint && pnpm build"
+		"check": "pnpm format:check && pnpm lint && pnpm build",
+		"publish:dev": "pnpm build && rojo build -o oath.rbxlx && node scripts/publish.mjs",
+		"publish:hub": "pnpm build && rojo build -o oath.rbxlx && node scripts/publish.mjs hub",
+		"publish:match": "pnpm build && rojo build -o oath.rbxlx && node scripts/publish.mjs match"
 	},
 	"devDependencies": {
 		"@rbxts/compiler-types": "3.0.0-types.0",
+		"@rbxts/jest": "3.16.0-ts.1",
+		"@rbxts/jest-globals": "3.16.0-ts.1",
 		"@rbxts/types": "^1.0.777",
 		"@typescript-eslint/eslint-plugin": "^6.7.5",
 		"@typescript-eslint/parser": "^6.7.5",
