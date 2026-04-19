@@ -220,7 +220,7 @@ function PartyPanel(props: { party: PartyState; onLeaveParty: () => void; onTogg
 						</frame>,
 					);
 				}
-				return <>{...empties}</>;
+				return empties;
 			})()}
 
 			<textbutton
