@@ -1,8 +1,13 @@
 import { Networking } from "@flamework/networking";
 
-interface ClientToServerEvents {}
+interface ClientToServerEvents {
+	confirmCharacterCreated(): void;
+}
 
-interface ServerToClientEvents {}
+interface ServerToClientEvents {
+	profileLoaded(profile: { hasCompletedCreator: boolean }): void;
+	profileUpdated(profile: { hasCompletedCreator: boolean }): void;
+}
 
 interface ClientToServerFunctions {}
 

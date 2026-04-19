@@ -23,6 +23,14 @@
 2. **No cheating via client inputs.** Validate every remote. No server trusts a client-side hit claim without server-side verification.
 3. **Every remote has a schema + rate limit + auth check.** No bare `RemoteEvent`. Use ByteNet (or whatever networking lib STACK.md picks).
 4. **`ReplicatedStorage` is public.** Secrets (API keys, server-only configs) live in `ServerStorage` or `ServerScriptService`.
+
+    **Also: secrets never touch git.** Before every `git add` that introduces a new file, before the first commit of any new repo, and before any push that introduces new commits, grep the staged tree for secret patterns:
+
+    ```
+    ghp_|gho_|ghs_|ghr_|sk-[A-Za-z0-9]{20}|ctx7sk-|tvly-|AKIA[0-9A-Z]{16}|xoxb-|xoxp-|Bearer\s+[A-Za-z0-9_-]{20}|api[_-]?key|access[_-]?token|private[_-]?key|-----BEGIN
+    ```
+
+    Inspect every config file (`.mcp.json`, `.env*`, `*.toml` / `*.yaml` / `*.json` named like `credentials`/`secrets`/`config`) **before** staging — not after. If a match surfaces: gitignore the file, replace the value with an env-var interpolation (`${VAR}`), or scrub. Never rely on GitHub's push protection — it is a backstop, not review. A secret that touched your local git object store is compromised even if it never pushed; rotate it.
 5. **Player data goes through ProfileStore** (or the equivalent chosen in STACK.md). Never raw `DataStoreService`.
 6. **Shared state (planet campaign) uses MemoryStoreService with sharding.** Never one monolithic key — partition limits will throttle us. See VALIDATION.md for the sharding pattern.
 7. **Types and schemas live ONCE in `src/shared/`.** Never redeclare across server/client layers.
@@ -41,6 +49,16 @@
 ---
 
 ## How Claude works on The Oath of Peace
+
+**Research when the decision actually requires it. Then act.** When toolchain configs, library APIs, or unfamiliar patterns are on the path, a single targeted context7 / WebFetch call is worth its weight — Hard Rule #18 exists because training data on these is systematically stale. But research is an input to action, not a substitute. If you catch yourself reading sibling projects, DevForum threads, or docs for more than a few minutes without writing or editing code, you are procrastinating — ask Ahmad a concrete question and stop reading. The goal is to make a well-informed decision quickly, not an exhaustively-informed decision slowly.
+
+**Quality, stability, and long-term correctness are the only metrics that matter for shipped work.** Do not pick the "quick" fix over the "right" fix. Every decision should be one Ahmad would still endorse six months from now. Every shipped system should survive scale, exploiters, and the next three features built on top of it. Quality is about the *output*, not the *process*.
+
+**Quality > speed. Stability > throughput. Fewer bugs > more features.** When a trade-off presents itself (skip a test or write it, hand-write a config or fetch current docs, accept a footgun or design it out, paper over an error or diagnose root cause) — always pick the higher-quality path. The only case where speed wins is when the action is fully reversible and trivially small. Anything load-bearing — config, schema, networking, persistence, security — gets the slow, careful treatment.
+
+**Pace yourself like a senior engineer, not a junior in a hurry.** Reading a file takes 2 seconds and prevents hours of unwinding. Before staging a file you haven't opened this session, open it. Before rewriting git history, confirm the remote's state. Before committing a new repo for the first time, grep the tree for secret patterns (Hard Rule #4). Before running a destructive shell command, state what will change and what will not. Taking a deliberate extra minute beats reactive cleanup nine times out of ten.
+
+**When caught in a mistake, the simplest correct fix is almost always right.** Don't pile on architecture (env-var templates, wrapper scripts, refactors) to cover a careless action. If a secret was committed: `.gitignore` the file, rewrite history, rotate the key. Not a new config framework. Professional = slow enough to be correct, humble enough to pick the cheap fix when it's right.
 
 **Own the work end-to-end.** Verify it actually works before reporting done. Run the build. Run the lint. Run the test. Playtest in Studio. If a verification path exists, take it.
 
