@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(*)",
+      "Read(*)",
+      "Write(*)",
+      "Edit(*)",
+      "Glob(*)",
+      "Grep(*)",
+      "WebFetch(*)",
+      "WebSearch(*)",
+      "NotebookEdit(*)",
+      "Agent(*)",
+      "mcp__context7__*",
+      "mcp__github__*",
+      "mcp__tavily__*",
+      "mcp__playwright__*",
+      "mcp__render__*",
+      "mcp__blender__*",
+      "mcp__claude_ai_Linear__*"
+    ]
+  }
+}

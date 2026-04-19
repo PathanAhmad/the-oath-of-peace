@@ -1,0 +1,72 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+out/
+build/
+include/
+*.tsbuildinfo
+flamework.build
+*.rbxl
+*.rbxlx
+*.rbxm
+*.rbxmx
+
+# Roblox
+*.rbxp
+*.rbxm.lock
+*.rbxmx.lock
+
+# Editors
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment — never commit secrets
+.env
+.env.*
+!.env.example
+
+# MCP server config — contains API keys / personal access tokens. Per-user.
+.mcp.json
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Rokit toolchain cache
+.rokit/
+
+# Generated assets (large files, regenerate from source)
+assets/models/generated/*.fbx
+assets/models/generated/*.glb
+assets/models/generated/*.obj
+# But keep processed finals in git
+!assets/models/final/
+
+# Audio/texture caches
+assets/audio/cache/
+assets/textures/cache/
+
+# Blender backups
+*.blend1
+*.blend2
+
+# Local dev state
+.cache/
+tmp/
+
+# Claude Code per-user local settings (team settings.json is committed)
+.claude/settings.local.json
