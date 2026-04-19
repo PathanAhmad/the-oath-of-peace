@@ -20,7 +20,7 @@ export type LaunchListener = (code: string) => void;
 
 @Service()
 export class PartyService implements OnStart {
-	private partyStore = MemoryStoreService.GetHashMap("oath_parties");
+	private partyStore: MemoryStoreHashMap | undefined;
 	private partyByUser = new Map<number, string>();
 	private localParties = new Map<string, PartyState>();
 	private launchListeners = new Array<LaunchListener>();
@@ -29,6 +29,13 @@ export class PartyService implements OnStart {
 
 	onStart() {
 		if (getPlaceKey(game.PlaceId) !== "hub") return;
+
+		const [ok, store] = pcall(() => MemoryStoreService.GetHashMap("oath_parties"));
+		if (ok) {
+			this.partyStore = store as MemoryStoreHashMap;
+		} else {
+			warn(`[PartyService] MemoryStore unavailable (Studio without published PlaceId?): ${store}`);
+		}
 
 		Events.createParty.connect((player) => this.handleCreate(player));
 		Events.joinParty.connect((player, code) => this.handleJoin(player, code));
@@ -246,14 +253,16 @@ export class PartyService implements OnStart {
 	}
 
 	private tryReserveCode(code: string, leaderUserId: number): boolean {
+		if (!this.partyStore) return true; // Studio fallback: skip cross-server reservation
 		const [ok] = pcall(() =>
-			this.partyStore.SetAsync(MEMORY_KEYS.party(code), leaderUserId, MEMORY_TTL_SECONDS.party),
+			this.partyStore!.SetAsync(MEMORY_KEYS.party(code), leaderUserId, MEMORY_TTL_SECONDS.party),
 		);
 		return ok;
 	}
 
 	private releaseCode(code: string) {
-		pcall(() => this.partyStore.RemoveAsync(MEMORY_KEYS.party(code)));
+		if (!this.partyStore) return;
+		pcall(() => this.partyStore!.RemoveAsync(MEMORY_KEYS.party(code)));
 	}
 
 	private generateCode(): string {

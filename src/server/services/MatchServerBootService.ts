@@ -16,7 +16,7 @@ interface MatchHandoff {
 
 @Service()
 export class MatchServerBootService implements OnStart {
-	private matchStore = MemoryStoreService.GetHashMap("oath_matches");
+	private matchStore: MemoryStoreHashMap | undefined;
 	private handoff?: MatchHandoff;
 	private classByUserId = new Map<number, ClassId>();
 
@@ -24,6 +24,14 @@ export class MatchServerBootService implements OnStart {
 
 	onStart() {
 		if (getPlaceKey(game.PlaceId) !== "match") return;
+
+		const [ok, store] = pcall(() => MemoryStoreService.GetHashMap("oath_matches"));
+		if (ok) {
+			this.matchStore = store as MemoryStoreHashMap;
+		} else {
+			warn(`[MatchBoot] MemoryStore unavailable: ${store}`);
+			return;
+		}
 
 		this.loadHandoff();
 
@@ -64,7 +72,11 @@ export class MatchServerBootService implements OnStart {
 		}
 
 		if (this.handoff === undefined) {
-			const [ok, payload] = pcall(() => this.matchStore.GetAsync(MEMORY_KEYS.match(teleportData.accessCode!)));
+			if (!this.matchStore) {
+				player.Kick("Match roster unavailable — MemoryStore not ready.");
+				return;
+			}
+			const [ok, payload] = pcall(() => this.matchStore!.GetAsync(MEMORY_KEYS.match(teleportData.accessCode!)));
 			if (!ok || payload === undefined || !typeIs(payload, "string")) {
 				player.Kick("Match roster not found. Please rejoin via the Hub.");
 				return;

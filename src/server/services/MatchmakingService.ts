@@ -20,12 +20,19 @@ const TELEPORT_RETRY_BACKOFF_SEC = 2;
 
 @Service()
 export class MatchmakingService implements OnStart {
-	private matchStore = MemoryStoreService.GetHashMap("oath_matches");
+	private matchStore: MemoryStoreHashMap | undefined;
 
 	constructor(private readonly partyService: PartyService) {}
 
 	onStart() {
 		if (getPlaceKey(game.PlaceId) !== "hub") return;
+
+		const [ok, store] = pcall(() => MemoryStoreService.GetHashMap("oath_matches"));
+		if (ok) {
+			this.matchStore = store as MemoryStoreHashMap;
+		} else {
+			warn(`[Matchmaking] MemoryStore unavailable: ${store}`);
+		}
 
 		this.partyService.onLaunchReady((code) => this.launch(code));
 
@@ -60,9 +67,13 @@ export class MatchmakingService implements OnStart {
 			createdAt: os.time(),
 		};
 
+		if (!this.matchStore) {
+			this.abortLaunch(state, "MemoryStore unavailable — cannot launch.");
+			return;
+		}
 		const payload = HttpService.JSONEncode(handoff);
 		const [writeOk] = pcall(() =>
-			this.matchStore.SetAsync(MEMORY_KEYS.match(accessCode), payload, MEMORY_TTL_SECONDS.match),
+			this.matchStore!.SetAsync(MEMORY_KEYS.match(accessCode), payload, MEMORY_TTL_SECONDS.match),
 		);
 		if (!writeOk) {
 			this.abortLaunch(state, "Failed to write match roster. Try again.");

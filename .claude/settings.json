@@ -17,7 +17,8 @@
       "mcp__playwright__*",
       "mcp__render__*",
       "mcp__blender__*",
-      "mcp__claude_ai_Linear__*"
+      "mcp__claude_ai_Linear__*",
+      "mcp__Roblox_Studio__*"
     ]
   }
 }

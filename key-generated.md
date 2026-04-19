@@ -1,0 +1,260 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e9]:
+      - link "Creator" [ref=e1109] [cursor=pointer]:
+        - /url: /
+        - img [ref=e13]
+        - generic [ref=e74]: Creator
+      - generic [ref=e77]:
+        - combobox "AhmadPSN AhmadPSN" [ref=e1110] [cursor=pointer]:
+          - generic [ref=e79]:
+            - img "AhmadPSN" [ref=e1111]
+            - generic "AhmadPSN" [ref=e1112]
+        - textbox: "126595306"
+        - img
+        - group
+      - link "Home" [ref=e1113] [cursor=pointer]:
+        - /url: /
+        - img [ref=e88]
+        - generic [ref=e91]: Home
+      - link "Creations" [ref=e1114] [cursor=pointer]:
+        - /url: /dashboard/creations
+        - img [ref=e95]
+        - generic [ref=e98]: Creations
+      - link "Learn" [ref=e1115] [cursor=pointer]:
+        - /url: https://create.roblox.com/docs?navFromCreatorHub=true
+        - img [ref=e102]
+        - generic [ref=e106]: Learn
+      - link "Store" [ref=e1116] [cursor=pointer]:
+        - /url: https://create.roblox.com/store/
+        - img [ref=e110]
+        - generic [ref=e113]: Store
+      - link "Forum" [ref=e1117] [cursor=pointer]:
+        - /url: https://devforum.roblox.com
+        - img [ref=e117]
+        - generic [ref=e122]: Forum
+      - separator [ref=e123]
+      - link "Finances" [ref=e1118] [cursor=pointer]:
+        - /url: /dashboard/devex
+        - img [ref=e127]
+        - generic [ref=e130]: Finances
+      - link "Analytics" [ref=e1119] [cursor=pointer]:
+        - /url: /dashboard/analytics
+        - img [ref=e134]
+        - generic [ref=e144]: Analytics
+      - link "Ads" [ref=e1120] [cursor=pointer]:
+        - /url: https://create.roblox.com/advertise
+        - img [ref=e148]
+        - generic [ref=e151]: Ads
+      - separator [ref=e152]
+      - button "All tools" [ref=e1121] [cursor=pointer]:
+        - img [ref=e156]
+        - generic [ref=e167]: All tools
+      - link "Roblox.com" [ref=e1122] [cursor=pointer]:
+        - /url: https://roblox.com/
+        - img [ref=e171]
+        - generic [ref=e174]: Roblox.com
+      - button "Studio" [ref=e1123] [cursor=pointer]:
+        - img [ref=e178]
+        - generic [ref=e182]: Studio
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - button "menu" [ref=e1124] [cursor=pointer]:
+          - img [ref=e19]
+        - heading "API Extensions" [level=1] [ref=e1125]
+      - generic [ref=e21]:
+        - button "Search" [ref=e1126] [cursor=pointer]:
+          - img [ref=e24]
+        - button "Notifications" [ref=e1127] [cursor=pointer]:
+          - img [ref=e189]
+        - button "AhmadPSN" [ref=e1128] [cursor=pointer]:
+          - img "AhmadPSN" [ref=e1129]
+    - generic [ref=e31]:
+      - generic [ref=e249]:
+        - generic [ref=e250]:
+          - button "cancel" [ref=e1130] [cursor=pointer]:
+            - img [ref=e252]
+          - generic [ref=e254]: New API Key
+          - button "Save Changes To Key" [disabled]:
+            - generic: Save Changes To Key
+        - separator [ref=e256]
+        - generic [ref=e258]:
+          - button "1 General Information" [expanded] [ref=e1131] [cursor=pointer]:
+            - generic [ref=e262]:
+              - generic [ref=e264]: "1"
+              - generic [ref=e265]: General Information
+            - img [ref=e267]
+          - region [ref=e272]:
+            - generic [ref=e274]:
+              - generic [ref=e275]:
+                - generic [ref=e276]:
+                  - generic [ref=e277]:
+                    - text: Name
+                    - generic [ref=e278]: (Required)
+                  - paragraph [ref=e279]: Give your API Key a unique name
+                - generic [ref=e281]:
+                  - generic [ref=e283]:
+                    - textbox "Name(Required) 22/64" [ref=e1132]:
+                      - /placeholder: Name your API Key
+                      - text: The Oath dev publisher
+                    - group
+                  - generic [ref=e285]: 22/64
+              - generic [ref=e286]:
+                - generic [ref=e287]:
+                  - generic [ref=e288]: Description
+                  - paragraph [ref=e289]: Enter an optional description for your API key
+                - generic [ref=e291]:
+                  - generic [ref=e293]:
+                    - textbox "Description 0/1000" [ref=e1133]:
+                      - /placeholder: Enter a description here...
+                    - group
+                  - generic [ref=e295]: 0/1000
+        - generic [ref=e297]:
+          - button "2 Access Permissions" [expanded] [ref=e1134] [cursor=pointer]:
+            - generic [ref=e301]:
+              - generic [ref=e303]: "2"
+              - generic [ref=e304]: Access Permissions
+            - img [ref=e306]
+          - region [ref=e311]:
+            - generic [ref=e313]:
+              - generic [ref=e314]:
+                - generic [ref=e318]:
+                  - img [ref=e319]
+                  - combobox "Select API System" [ref=e1135]
+                  - button "Open" [ref=e1136] [cursor=pointer]:
+                    - img [ref=e324]
+                  - group
+                - generic [ref=e327]: Set the minimum permissions for your application to minimize impact in case your key gets compromised.
+              - generic [ref=e328]:
+                - generic [ref=e473]:
+                  - generic [ref=e474]:
+                    - generic [ref=e475]:
+                      - generic [ref=e476]: universe-places
+                      - button "Remove API System" [ref=e1137] [cursor=pointer]:
+                        - img [ref=e478]
+                    - generic [ref=e480]:
+                      - checkbox "Restrict by Experience" [checked] [ref=e1138] [cursor=pointer]
+                      - generic [ref=e486]: Restrict by Experience
+                      - generic [ref=e604]:
+                        - img [ref=e606]
+                        - combobox "Search for an experience" [ref=e1139]
+                        - button "Open" [ref=e1140] [cursor=pointer]:
+                          - img [ref=e611]
+                        - group
+                  - separator [ref=e487]
+                  - generic [ref=e650]:
+                    - generic [ref=e652]:
+                      - text: The Oath (dev)
+                      - button "Copy experience ID to clipboard" [ref=e1141] [cursor=pointer]:
+                        - img [ref=e654]
+                      - button "Remove Experience" [ref=e1142] [cursor=pointer]:
+                        - img [ref=e657]
+                      - button "Open in New Tab" [ref=e1143] [cursor=pointer]:
+                        - img [ref=e660]
+                    - generic [ref=e663]:
+                      - paragraph [ref=e665]: "\"Write\" will apply to all existing places in the experience."
+                      - generic [ref=e670]:
+                        - button "universe-places:write" [ref=e1144] [cursor=pointer]:
+                          - generic [ref=e683]: universe-places:write
+                          - img [ref=e684]
+                        - combobox [ref=e686]
+                        - button "Open" [ref=e1145] [cursor=pointer]:
+                          - img [ref=e674]
+                        - group
+                - generic [ref=e794]:
+                  - generic [ref=e795]:
+                    - generic [ref=e796]:
+                      - generic [ref=e797]: universe-datastores
+                      - button "Remove API System" [ref=e1146] [cursor=pointer]:
+                        - img [ref=e799]
+                    - generic [ref=e801]:
+                      - checkbox "Restrict by Experience" [ref=e1147] [cursor=pointer]
+                      - generic [ref=e807]: Restrict by Experience
+                  - separator [ref=e808]
+                  - generic [ref=e811]:
+                    - paragraph [ref=e813]: Select operations for ALL data stores in your experience. Current and future.
+                    - generic [ref=e818]:
+                      - button "universe-datastores.objects:read" [ref=e1148] [cursor=pointer]:
+                        - generic [ref=e1009]: universe-datastores.objects:read
+                        - img [ref=e1010]
+                      - combobox [ref=e1012]
+                      - button "Open" [ref=e1149] [cursor=pointer]:
+                        - img [ref=e822]
+                      - group
+        - generic [ref=e330]:
+          - button "3 Security" [expanded] [ref=e1150] [cursor=pointer]:
+            - generic [ref=e334]:
+              - generic [ref=e336]: "3"
+              - generic [ref=e337]: Security
+            - img [ref=e339]
+          - region [ref=e344]:
+            - generic [ref=e346]:
+              - generic [ref=e348]:
+                - checkbox "Restrict IPs" [ref=e1151] [cursor=pointer]
+                - text: Restrict which IP addresses this API Key can be used from
+              - generic [ref=e353]:
+                - generic [ref=e354]:
+                  - generic [ref=e356]: Expiration
+                  - text: The API Key will expire either on the specified expiration date or after 60 days of inactivity, whichever comes first.
+                - generic [ref=e360]:
+                  - combobox "No Expiration" [ref=e1152] [cursor=pointer]
+                  - textbox: "0"
+                  - img
+                  - group
+        - generic [ref=e1153]:
+          - generic [ref=e1154]:
+            - text: s+YxkKiIUUSCk0MEMvZb4FS5LGZOz+jlIxbvVS0JHrx/+BubZXlKaGJHY2lPaUpTVXpJMU5pSXNJbXRwWkNJNkluTnBaeTB5TURJeExUQTNMVEV6VkRFNE9qVXhPalE1V2lJc0luUjVjQ0k2SWtwWFZDSjkuZXlKaGRXUWlPaUpTYjJKc2IzaEpiblJsY201aGJDSXNJbWx6Y3lJNklrTnNiM1ZrUVhWMGFHVnVkR2xqWVhScGIyNVRaWEoyYVdObElpd2lZbUZ6WlVGd2FVdGxlU0k2SW5NcldYaHJTMmxKVlZWVFEyc3dUVVZOZGxwaU5FWlROVXhIV2s5NksycHNTWGhpZGxaVE1FcEljbmd2SzBKMVlpSXNJbTkzYm1WeVNXUWlPaUl4TWpZMU9UVXpNRFlpTENKbGVIQWlPakUzTnpZMU5qazBOemdzSW1saGRDSTZNVGMzTmpVMk5UZzNPQ3dpYm1KbUlqb3hOemMyTlRZMU9EYzRmUS5SZk1PVjJ2S3hCc3pRYVZCZzZfaHpmazl3VkFkMzlRQlJnYTJHbEZJS2Zrb2tpRFUzRndKUmhwUUVST1plbE51ZjZTZldkUWp2THhhUWxhbk9jRTlyVUx1YkpibHgtZUVyR3RIUDVxSWRGcXBrYi1zQ1RDQzRfZFFSaENaQmt4ZHM5TmFyTlExSnN3SXRHUEcxdE1Vd19Ga0ZtQmhKTy1VN1gxTmt6WjRlTXJWRVZ2bU9rcGxWUEJTcnkzcmtFdlZwRVVHU2FETVE4WWhaTUpIalJWTUJiSU1SZW5nc0xLeEpGb0FXQkxidlZrSG9xRDQ3SXhpNGRpVjY3emMzNDY5TlBkUlVTUklOS0xPbGZMUFcxRlplR0lYMS10T3FHcmFoeHdNZkxfUjFwcVZCcklwOUFxRzhHOEJIaV8xTWVhZWRKZFFBU2E5Vl9hZU1YdXhrY0tOb1E=
+            - generic [ref=e1155]:
+              - strong [ref=e1156]: Note!
+              - text: Copy the API Key before closing the page and save it to a secure place. The system will NOT store the key for security reasons.
+          - button "Copy Key To Clipboard" [ref=e1159] [cursor=pointer]:
+            - generic [ref=e1160]: Copy Key To Clipboard
+        - generic [ref=e363]:
+          - button "Save Changes To Key" [disabled]:
+            - generic: Save Changes To Key
+      - generic [ref=e39]:
+        - generic [ref=e40]:
+          - generic [ref=e241]: ©2026 Roblox Corporation. All rights reserved.
+          - generic [ref=e41]:
+            - link "Terms" [ref=e1166] [cursor=pointer]:
+              - /url: https://www.roblox.com/info/terms
+            - text: ·
+            - link "Privacy" [ref=e1167] [cursor=pointer]:
+              - /url: https://www.roblox.com/info/privacy
+            - text: ·
+            - link "Accessibility" [ref=e1168] [cursor=pointer]:
+              - /url: https://www.roblox.com/info/accessibility
+            - text: ·
+            - link "Support" [ref=e1169] [cursor=pointer]:
+              - /url: https://www.roblox.com/info/help
+            - text: ·
+            - button "Your Privacy Choices" [ref=e1170] [cursor=pointer]:
+              - generic [ref=e247]: Your Privacy Choices
+        - generic [ref=e42]:
+          - link "X" [ref=e1171] [cursor=pointer]:
+            - /url: https://x.com/Roblox
+            - button "X" [ref=e1172]:
+              - img [ref=e45]
+          - link "Facebook" [ref=e1173] [cursor=pointer]:
+            - /url: https://www.facebook.com/Roblox/
+            - button "Facebook" [ref=e1174]:
+              - img [ref=e49]
+          - link "LinkedIn" [ref=e1175] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/roblox
+            - button "LinkedIn" [ref=e1176]:
+              - img [ref=e53]
+          - link "Instagram" [ref=e1177] [cursor=pointer]:
+            - /url: https://www.instagram.com/roblox/
+            - button "Instagram" [ref=e1178]:
+              - img [ref=e57]
+          - link "YouTube" [ref=e1179] [cursor=pointer]:
+            - /url: https://www.youtube.com/Roblox
+            - button "YouTube" [ref=e1180]:
+              - img [ref=e62]
+        - link "English" [ref=e1181] [cursor=pointer]:
+          - /url: https://roblox.com/my/account
+          - button "English" [ref=e1182]:
+            - img [ref=e68]
+            - generic [ref=e70]: English
+  - alert [ref=e71]
+  - iframe

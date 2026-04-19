@@ -1,0 +1,150 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e9]:
+      - link "Creator" [ref=e72] [cursor=pointer]:
+        - /url: /
+        - img [ref=e13]
+        - generic [ref=e74]: Creator
+      - generic [ref=e77]:
+        - combobox "AhmadPSN AhmadPSN" [ref=e78] [cursor=pointer]:
+          - generic [ref=e79]:
+            - img "AhmadPSN" [ref=e82]
+            - generic "AhmadPSN" [ref=e84]
+        - textbox: "126595306"
+        - img
+        - group
+      - link "Home" [ref=e86] [cursor=pointer]:
+        - /url: /
+        - img [ref=e88]
+        - generic [ref=e91]: Home
+      - link "Creations" [ref=e93] [cursor=pointer]:
+        - /url: /dashboard/creations
+        - img [ref=e95]
+        - generic [ref=e98]: Creations
+      - link "Learn" [ref=e100] [cursor=pointer]:
+        - /url: https://create.roblox.com/docs?navFromCreatorHub=true
+        - img [ref=e102]
+        - generic [ref=e106]: Learn
+      - link "Store" [ref=e108] [cursor=pointer]:
+        - /url: https://create.roblox.com/store/
+        - img [ref=e110]
+        - generic [ref=e113]: Store
+      - link "Forum" [ref=e115] [cursor=pointer]:
+        - /url: https://devforum.roblox.com
+        - img [ref=e117]
+        - generic [ref=e122]: Forum
+      - separator [ref=e123]
+      - link "Finances" [ref=e125] [cursor=pointer]:
+        - /url: /dashboard/devex
+        - img [ref=e127]
+        - generic [ref=e130]: Finances
+      - link "Analytics" [ref=e132] [cursor=pointer]:
+        - /url: /dashboard/analytics
+        - img [ref=e134]
+        - generic [ref=e144]: Analytics
+      - link "Ads" [ref=e146] [cursor=pointer]:
+        - /url: https://create.roblox.com/advertise
+        - img [ref=e148]
+        - generic [ref=e151]: Ads
+      - separator [ref=e152]
+      - button "All tools" [ref=e154] [cursor=pointer]:
+        - img [ref=e156]
+        - generic [ref=e167]: All tools
+      - link "Roblox.com" [ref=e169] [cursor=pointer]:
+        - /url: https://roblox.com/
+        - img [ref=e171]
+        - generic [ref=e174]: Roblox.com
+      - button "Studio" [ref=e176] [cursor=pointer]:
+        - img [ref=e178]
+        - generic [ref=e182]: Studio
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - button "menu" [ref=e18] [cursor=pointer]:
+          - img [ref=e19]
+        - heading "API Extensions" [level=1] [ref=e185]
+      - generic [ref=e21]:
+        - button "Search" [ref=e23] [cursor=pointer]:
+          - img [ref=e24]
+        - button "Notifications" [ref=e188] [cursor=pointer]:
+          - img [ref=e189]
+        - button "AhmadPSN" [ref=e191] [cursor=pointer]:
+          - img "AhmadPSN" [ref=e196]
+    - generic [ref=e31]:
+      - generic [ref=e33]:
+        - generic [ref=e198]: Use API keys if you want to build internal tools for yourself or your team.
+        - generic [ref=e201]:
+          - text: API Keys
+          - button "Create API Key" [ref=e203] [cursor=pointer]:
+            - generic [ref=e204]: Create API Key
+          - table [ref=e206]:
+            - rowgroup [ref=e207]:
+              - row "Name Key Status Created Updated Actions" [ref=e208]:
+                - columnheader "Name" [ref=e209]
+                - columnheader "Key" [ref=e210]
+                - columnheader "Status" [ref=e211]
+                - columnheader "Created" [ref=e212]
+                - columnheader "Updated" [ref=e213]
+                - columnheader "Actions" [ref=e214]
+            - rowgroup [ref=e215]:
+              - row "iron-empires-ci tcSauClG5k... Active 4/14/2026, 9:18:17 AM 4/14/2026, 10:16:57 AM Edit Duplicate Delete" [ref=e216]:
+                - cell "iron-empires-ci" [ref=e217]
+                - cell "tcSauClG5k..." [ref=e218]
+                - cell "Active" [ref=e219]
+                - cell "4/14/2026, 9:18:17 AM" [ref=e220]
+                - cell "4/14/2026, 10:16:57 AM" [ref=e221]
+                - cell "Edit Duplicate Delete" [ref=e222]:
+                  - button "Edit" [ref=e223] [cursor=pointer]:
+                    - img [ref=e225]
+                    - generic [ref=e228]: Edit
+                  - button "Duplicate" [ref=e229] [cursor=pointer]:
+                    - img [ref=e231]
+                    - generic [ref=e234]: Duplicate
+                  - button "Delete" [ref=e235] [cursor=pointer]:
+                    - img [ref=e237]
+                    - generic [ref=e240]: Delete
+      - generic [ref=e39]:
+        - generic [ref=e40]:
+          - generic [ref=e241]: ©2026 Roblox Corporation. All rights reserved.
+          - generic [ref=e41]:
+            - link "Terms" [ref=e242] [cursor=pointer]:
+              - /url: https://www.roblox.com/info/terms
+            - text: ·
+            - link "Privacy" [ref=e243] [cursor=pointer]:
+              - /url: https://www.roblox.com/info/privacy
+            - text: ·
+            - link "Accessibility" [ref=e244] [cursor=pointer]:
+              - /url: https://www.roblox.com/info/accessibility
+            - text: ·
+            - link "Support" [ref=e245] [cursor=pointer]:
+              - /url: https://www.roblox.com/info/help
+            - text: ·
+            - button "Your Privacy Choices" [ref=e246] [cursor=pointer]:
+              - generic [ref=e247]: Your Privacy Choices
+        - generic [ref=e42]:
+          - link "X" [ref=e43] [cursor=pointer]:
+            - /url: https://x.com/Roblox
+            - button "X" [ref=e44]:
+              - img [ref=e45]
+          - link "Facebook" [ref=e47] [cursor=pointer]:
+            - /url: https://www.facebook.com/Roblox/
+            - button "Facebook" [ref=e48]:
+              - img [ref=e49]
+          - link "LinkedIn" [ref=e51] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/roblox
+            - button "LinkedIn" [ref=e52]:
+              - img [ref=e53]
+          - link "Instagram" [ref=e55] [cursor=pointer]:
+            - /url: https://www.instagram.com/roblox/
+            - button "Instagram" [ref=e56]:
+              - img [ref=e57]
+          - link "YouTube" [ref=e60] [cursor=pointer]:
+            - /url: https://www.youtube.com/Roblox
+            - button "YouTube" [ref=e61]:
+              - img [ref=e62]
+        - link "English" [ref=e65] [cursor=pointer]:
+          - /url: https://roblox.com/my/account
+          - button "English" [ref=e66]:
+            - img [ref=e68]
+            - generic [ref=e70]: English
+  - alert [ref=e71]
+  - iframe

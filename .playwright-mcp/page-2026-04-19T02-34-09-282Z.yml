@@ -1,0 +1,315 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e9]:
+    - generic [ref=e13]:
+      - generic [ref=e15]:
+        - link [ref=e17] [cursor=pointer]:
+          - /url: /
+          - img [ref=e19]
+        - generic [ref=e23]:
+          - combobox "AhmadPSN AhmadPSN" [ref=e24] [cursor=pointer]:
+            - generic [ref=e25]:
+              - img "AhmadPSN" [ref=e28]
+              - generic "AhmadPSN" [ref=e30]
+          - textbox: "126595306"
+          - img
+          - group
+        - link "Home" [ref=e32] [cursor=pointer]:
+          - /url: /
+          - img [ref=e34]
+          - generic [ref=e37]: Home
+        - link "Creations" [ref=e39] [cursor=pointer]:
+          - /url: /dashboard/creations
+          - img [ref=e41]
+          - generic [ref=e44]: Creations
+        - link "Learn" [ref=e46] [cursor=pointer]:
+          - /url: https://create.roblox.com/docs?navFromCreatorHub=true
+          - img [ref=e48]
+          - generic [ref=e52]: Learn
+        - link "Store" [ref=e54] [cursor=pointer]:
+          - /url: https://create.roblox.com/store/
+          - img [ref=e56]
+          - generic [ref=e59]: Store
+        - link "Forum" [ref=e61] [cursor=pointer]:
+          - /url: https://devforum.roblox.com
+          - img [ref=e63]
+          - generic [ref=e68]: Forum
+        - link "Finances" [ref=e70] [cursor=pointer]:
+          - /url: /dashboard/devex
+          - img [ref=e72]
+          - generic [ref=e75]: Finances
+        - link "Analytics" [ref=e77] [cursor=pointer]:
+          - /url: /dashboard/analytics
+          - img [ref=e79]
+          - generic [ref=e89]: Analytics
+        - link "Ads" [ref=e91] [cursor=pointer]:
+          - /url: https://create.roblox.com/advertise
+          - img [ref=e93]
+          - generic [ref=e96]: Ads
+        - button "All tools" [ref=e98] [cursor=pointer]:
+          - img [ref=e100]
+          - generic [ref=e111]: All tools
+        - link "Roblox.com" [ref=e113] [cursor=pointer]:
+          - /url: https://roblox.com/
+          - img [ref=e115]
+          - generic [ref=e118]: Roblox.com
+        - button "Studio" [ref=e120] [cursor=pointer]:
+          - img [ref=e122]
+          - generic [ref=e126]: Studio
+      - generic [ref=e127]:
+        - generic [ref=e128]:
+          - list [ref=e129]:
+            - listitem [ref=e130]:
+              - generic [ref=e131]:
+                - img "The Oath (dev)" [ref=e135]
+                - generic [ref=e137]: The Oath (dev)
+              - button "more" [ref=e139] [cursor=pointer]:
+                - img [ref=e140]
+          - separator [ref=e142]
+        - tree [ref=e144]:
+          - treeitem "Overview" [ref=e145]:
+            - link "Overview" [ref=e149] [cursor=pointer]:
+              - /url: /dashboard/creations/experiences/10054318861/overview
+          - treeitem "Configure" [ref=e150]:
+            - generic [ref=e151] [cursor=pointer]:
+              - img [ref=e153]
+              - generic [ref=e155]: Configure
+          - treeitem "Analytics" [ref=e156]:
+            - generic [ref=e157] [cursor=pointer]:
+              - img [ref=e159]
+              - generic [ref=e161]: Analytics
+          - treeitem "Monetization" [ref=e162]:
+            - generic [ref=e163] [cursor=pointer]:
+              - img [ref=e165]
+              - generic [ref=e167]: Monetization
+          - treeitem "Monitoring" [ref=e168]:
+            - generic [ref=e169] [cursor=pointer]:
+              - img [ref=e171]
+              - generic [ref=e173]: Monitoring
+          - treeitem "Activity History" [ref=e174]:
+            - link "Activity History" [ref=e178] [cursor=pointer]:
+              - /url: /dashboard/creations/experiences/10054318861/activity-history
+          - treeitem "Audience" [ref=e179]:
+            - generic [ref=e180] [cursor=pointer]:
+              - img [ref=e182]
+              - generic [ref=e184]: Audience
+          - treeitem "Engagement" [ref=e185]:
+            - generic [ref=e186] [cursor=pointer]:
+              - img [ref=e188]
+              - generic [ref=e190]: Engagement
+          - treeitem "Safety" [ref=e191]:
+            - generic [ref=e192] [cursor=pointer]:
+              - img [ref=e194]
+              - generic [ref=e196]: Safety
+          - treeitem "Promotion" [ref=e197]:
+            - generic [ref=e198] [cursor=pointer]:
+              - img [ref=e200]
+              - generic [ref=e202]: Promotion
+    - generic [ref=e204]:
+      - generic [ref=e205]:
+        - button "menu" [ref=e206] [cursor=pointer]:
+          - img [ref=e207]
+        - navigation "breadcrumb" [ref=e211]:
+          - list [ref=e212]:
+            - listitem [ref=e213]:
+              - link "Creations" [ref=e214] [cursor=pointer]:
+                - /url: /dashboard/creations
+            - listitem [ref=e215]: /
+            - listitem [ref=e216]:
+              - link "The Oath (dev)" [ref=e217] [cursor=pointer]:
+                - /url: /dashboard/creations/experiences/10054318861/overview
+            - listitem [ref=e218]: /
+            - listitem [ref=e219]:
+              - link "Places" [ref=e306] [cursor=pointer]:
+                - /url: /dashboard/creations/experiences/10054318861/places
+            - listitem [ref=e307]: /
+            - listitem [ref=e308]: Manage
+      - generic [ref=e220]:
+        - button "Search" [ref=e222] [cursor=pointer]:
+          - img [ref=e223]
+        - button "Notifications" [ref=e227] [cursor=pointer]:
+          - img [ref=e228]
+        - button "AhmadPSN" [ref=e230] [cursor=pointer]:
+          - img "AhmadPSN" [ref=e235]
+    - generic [ref=e236]:
+      - generic [ref=e238]:
+        - heading "Places" [level=1] [ref=e240]
+        - generic [ref=e309]:
+          - generic [ref=e311]: Add a Place
+          - generic [ref=e312]:
+            - generic [ref=e313]:
+              - generic [ref=e314]:
+                - img "Match" [ref=e316]
+                - generic [ref=e318]:
+                  - generic [ref=e320]: Match
+                  - generic [ref=e322]: "Experience: Match"
+                - generic [ref=e323]:
+                  - button "Add Place" [disabled]:
+                    - generic: Add Place
+                  - paragraph [ref=e324]: Cannot choose start places.
+              - generic [ref=e325]:
+                - img "The Oath (dev)" [ref=e327]
+                - generic [ref=e329]:
+                  - generic [ref=e331]: The Oath (dev)
+                  - generic [ref=e333]: "Experience: The Oath (dev)"
+                - generic [ref=e334]:
+                  - button "Add Place" [disabled]:
+                    - generic: Add Place
+                  - paragraph [ref=e335]: Cannot choose start places.
+              - generic [ref=e336]:
+                - img "iron-empires-ci-test" [ref=e338]
+                - generic [ref=e340]:
+                  - generic [ref=e342]: iron-empires-ci-test
+                  - generic [ref=e344]: "Experience: iron-empires-ci-test"
+                - generic [ref=e345]:
+                  - button "Add Place" [disabled]:
+                    - generic: Add Place
+                  - paragraph [ref=e346]: Cannot choose start places.
+              - generic [ref=e347]:
+                - img "HEHE HA HA" [ref=e349]
+                - generic [ref=e351]:
+                  - generic [ref=e353]: HEHE HA HA
+                  - generic [ref=e355]: "Experience: HEHE HA HA"
+                - generic [ref=e356]:
+                  - button "Add Place" [disabled]:
+                    - generic: Add Place
+                  - paragraph [ref=e357]: Cannot choose start places.
+              - generic [ref=e358]:
+                - 'img "AhmadPSN''s Place Number: 9" [ref=e360]'
+                - generic [ref=e362]:
+                  - generic [ref=e364]: "AhmadPSN's Place Number: 9"
+                  - generic [ref=e366]: "Experience: AhmadPSN's Place Number: 9"
+                - generic [ref=e367]:
+                  - button "Add Place" [disabled]:
+                    - generic: Add Place
+                  - paragraph [ref=e368]: Cannot choose start places.
+              - generic [ref=e369]:
+                - img "testing" [ref=e371]
+                - generic [ref=e373]:
+                  - generic [ref=e375]: testing
+                  - generic [ref=e377]: "Experience: testing"
+                - generic [ref=e378]:
+                  - button "Add Place" [disabled]:
+                    - generic: Add Place
+                  - paragraph [ref=e379]: Cannot choose start places.
+              - generic [ref=e380]:
+                - img "(BETA) ZOMBIE APOCYLPSE" [ref=e382]
+                - generic [ref=e384]:
+                  - generic [ref=e386]: (BETA) ZOMBIE APOCYLPSE
+                  - generic [ref=e388]: "Experience: (BETA) ZOMBIE APOCYLPSE"
+                - generic [ref=e389]:
+                  - button "Add Place" [disabled]:
+                    - generic: Add Place
+                  - paragraph [ref=e390]: Cannot choose start places.
+              - generic [ref=e391]:
+                - img "(BETA)MINIGAMES" [ref=e393]
+                - generic [ref=e395]:
+                  - generic [ref=e397]: (BETA)MINIGAMES
+                  - generic [ref=e399]: "Experience: (BETA)MINIGAMES"
+                - generic [ref=e400]:
+                  - button "Add Place" [disabled]:
+                    - generic: Add Place
+                  - paragraph [ref=e401]: Cannot choose start places.
+              - generic [ref=e402]:
+                - img "FIGHT EM ALL :))))" [ref=e404]
+                - generic [ref=e406]:
+                  - generic [ref=e408]: FIGHT EM ALL :))))
+                  - generic [ref=e410]: "Experience: FIGHT EM ALL :))))"
+                - generic [ref=e411]:
+                  - button "Add Place" [disabled]:
+                    - generic: Add Place
+                  - paragraph [ref=e412]: Cannot choose start places.
+              - generic [ref=e413]:
+                - img "ZDS" [ref=e415]
+                - generic [ref=e417]:
+                  - generic [ref=e419]: ZDS
+                  - generic [ref=e421]: "Experience: ZDS"
+                - generic [ref=e422]:
+                  - button "Add Place" [disabled]:
+                    - generic: Add Place
+                  - paragraph [ref=e423]: Cannot choose start places.
+              - generic [ref=e424]:
+                - img "murder mystery map FFA (Free For All)" [ref=e426]
+                - generic [ref=e428]:
+                  - generic [ref=e430]: murder mystery map FFA (Free For All)
+                  - generic [ref=e432]: "Experience: murder mystery map FFA (Free For All)"
+                - generic [ref=e433]:
+                  - button "Add Place" [disabled]:
+                    - generic: Add Place
+                  - paragraph [ref=e434]: Cannot choose start places.
+              - generic [ref=e435]:
+                - img "boboux lol" [ref=e437]
+                - generic [ref=e439]:
+                  - generic [ref=e441]: boboux lol
+                  - generic [ref=e443]: "Experience: boboux lol"
+                - generic [ref=e444]:
+                  - button "Add Place" [disabled]:
+                    - generic: Add Place
+                  - paragraph [ref=e445]: Cannot choose start places.
+              - generic [ref=e446]:
+                - img "afk until i reach 5 mil" [ref=e448]
+                - generic [ref=e450]:
+                  - generic [ref=e452]: afk until i reach 5 mil
+                  - generic [ref=e454]: "Experience: afk until 1 mil"
+                - generic [ref=e455]:
+                  - button "Add Place" [disabled]:
+                    - generic: Add Place
+                  - paragraph [ref=e456]: Cannot choose start places.
+              - generic [ref=e457]:
+                - img "AhmadPSN's Place" [ref=e459]
+                - generic [ref=e461]:
+                  - generic [ref=e463]: AhmadPSN's Place
+                  - generic [ref=e465]: "Experience: AhmadPSN's Place"
+                - generic [ref=e466]:
+                  - button "Add Place" [disabled]:
+                    - generic: Add Place
+                  - paragraph [ref=e467]: Cannot choose start places.
+            - button "Done" [ref=e469] [cursor=pointer]:
+              - generic [ref=e470]: Done
+      - generic [ref=e267]:
+        - generic [ref=e268]:
+          - generic [ref=e269]: ©2026 Roblox Corporation. All rights reserved.
+          - generic [ref=e270]:
+            - link "Terms" [ref=e271] [cursor=pointer]:
+              - /url: https://www.roblox.com/info/terms
+            - text: ·
+            - link "Privacy" [ref=e272] [cursor=pointer]:
+              - /url: https://www.roblox.com/info/privacy
+            - text: ·
+            - link "Accessibility" [ref=e273] [cursor=pointer]:
+              - /url: https://www.roblox.com/info/accessibility
+            - text: ·
+            - link "Support" [ref=e274] [cursor=pointer]:
+              - /url: https://www.roblox.com/info/help
+            - text: ·
+            - button "Your Privacy Choices" [ref=e275] [cursor=pointer]:
+              - generic [ref=e276]: Your Privacy Choices
+        - generic [ref=e277]:
+          - link "X" [ref=e278] [cursor=pointer]:
+            - /url: https://x.com/Roblox
+            - button "X" [ref=e279]:
+              - img [ref=e280]
+          - link "Facebook" [ref=e282] [cursor=pointer]:
+            - /url: https://www.facebook.com/Roblox/
+            - button "Facebook" [ref=e283]:
+              - img [ref=e284]
+          - link "LinkedIn" [ref=e286] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/roblox
+            - button "LinkedIn" [ref=e287]:
+              - img [ref=e288]
+          - link "Instagram" [ref=e290] [cursor=pointer]:
+            - /url: https://www.instagram.com/roblox/
+            - button "Instagram" [ref=e291]:
+              - img [ref=e292]
+          - link "YouTube" [ref=e295] [cursor=pointer]:
+            - /url: https://www.youtube.com/Roblox
+            - button "YouTube" [ref=e296]:
+              - img [ref=e297]
+        - link "English" [ref=e300] [cursor=pointer]:
+          - /url: https://roblox.com/my/account
+          - button "English" [ref=e301]:
+            - img [ref=e303]
+            - generic [ref=e305]: English
+  - alert [ref=e7]: Places / Manage
+  - iframe [ref=e8]:
+    
+  - iframe
