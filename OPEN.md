@@ -7,7 +7,7 @@ Decisions not yet made. Roughly ordered by blocking priority.
 ## Resolved (logged in DESIGN.md)
 
 ### Identity
-- ✅ **Game name:** *The Oath of Peace*
+- ✅ **Game name:** *The Oath*
 - ✅ **Setting:** Parasites overrunning a civilized alien planet
 - ✅ **Tone:** Stylized sci-fi (bright alien cities + dark organic hives)
 - ✅ **Faction:** Galactic Guardians (interstellar protectors — knightly, not cop)

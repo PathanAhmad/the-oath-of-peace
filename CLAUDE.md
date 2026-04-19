@@ -1,4 +1,4 @@
-# The Oath of Peace — Agent Contract
+# The Oath — Agent Contract
 
 **TL;DR:** Server-authoritative Roblox co-op shooter. 4-player squads on a shared planet. Built with **roblox-ts + Flamework**. Quality > speed. When in doubt, ask Ahmad.
 
@@ -48,7 +48,7 @@
 
 ---
 
-## How Claude works on The Oath of Peace
+## How Claude works on The Oath
 
 **Research when the decision actually requires it. Then act.** When toolchain configs, library APIs, or unfamiliar patterns are on the path, a single targeted context7 / WebFetch call is worth its weight — Hard Rule #18 exists because training data on these is systematically stale. But research is an input to action, not a substitute. If you catch yourself reading sibling projects, DevForum threads, or docs for more than a few minutes without writing or editing code, you are procrastinating — ask Ahmad a concrete question and stop reading. The goal is to make a well-informed decision quickly, not an exhaustively-informed decision slowly.
 

@@ -1,4 +1,4 @@
-# The Oath of Peace
+# The Oath
 
 Roblox 4-player co-op shooter. Galactic Guardians liberate alien planets overrun by parasites. Server-wide campaign decides whether the squad ever faces the Hive Queen.
 

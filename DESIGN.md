@@ -47,7 +47,7 @@ Before any gameplay exists, we build the **full player loop end-to-end with plac
 
 **Faction crest:** Shield bearing a four-rayed star. White star on deep blue field. The 4 rays = 4-player squad. Recognizable on shoulder pauldrons + UI corners.
 
-**Game name:** *The Oath of Peace* — Guardians take an oath to defend the peaceful against those who would end it.
+**Game name:** *The Oath* — Guardians take an oath to defend the peaceful against those who would end it.
 
 **Tone (locked):** Stylized sci-fi. Bright alien cities + dark organic hives. Not gritty realism, not arcade cartoon — somewhere in between.
 

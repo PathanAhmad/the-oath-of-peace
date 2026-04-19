@@ -1,8 +1,8 @@
 {
-	"name": "the-oath-of-peace",
+	"name": "the-oath",
 	"version": "0.1.0",
 	"private": true,
-	"description": "The Oath of Peace — 4-player co-op shooter on Roblox (Galactic Guardians vs Parasite Army)",
+	"description": "The Oath — 4-player co-op shooter on Roblox (Galactic Guardians vs Parasite Army)",
 	"scripts": {
 		"build": "rbxtsc",
 		"watch": "rbxtsc -w",

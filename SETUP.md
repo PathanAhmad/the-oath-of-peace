@@ -299,7 +299,7 @@ Add `blender` entry only if validation test fails. Add `elevenlabs` entry during
 ## Folder structure (create in project)
 
 ```
-the-oath-of-peace/
+the-oath/
 ├── assets/
 │   ├── audio/              (empty for now — Phase 2)
 │   ├── textures/           (empty for now)

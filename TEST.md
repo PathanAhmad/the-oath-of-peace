@@ -1,4 +1,4 @@
-# How to test The Oath of Peace locally
+# How to test The Oath locally
 
 Each vertical slice lives here with reproducible steps. When a flow works, check the box.
 
@@ -6,7 +6,7 @@ Each vertical slice lives here with reproducible steps. When a flow works, check
 
 ## Character Creator MVP
 
-**What shipped:** First-time join → "The Oath of Peace" screen with a Confirm button → "Begin your Oath" modal → Deploy → placeholder Hub UI. Returning players skip the creator. Profile state is persisted through ProfileStore (mocked in Studio).
+**What shipped:** First-time join → "The Oath" screen with a Confirm button → "Begin your Oath" modal → Deploy → placeholder Hub UI. Returning players skip the creator. Profile state is persisted through ProfileStore (mocked in Studio).
 
 ### Setup (one-time)
 
@@ -22,7 +22,7 @@ Each vertical slice lives here with reproducible steps. When a flow works, check
 ### Test 1 — first-time join sees the creator
 
 - [ ] In Studio, open the **Test tab** → **Start** dropdown → choose **"Local Server"** with at least 1 player (Start Server + Players).
-- [ ] Once Player1's window is up, you should see a dark screen with **"THE OATH OF PEACE"** title and a **Confirm** button.
+- [ ] Once Player1's window is up, you should see a dark screen with **"THE OATH"** title and a **Confirm** button.
 - [ ] Click **Confirm**.
 - [ ] Modal **"Begin your Oath"** appears. Click **Deploy**.
 - [ ] Screen swaps to **"Hub (placeholder)"**. ✓

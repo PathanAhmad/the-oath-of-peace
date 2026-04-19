@@ -18,7 +18,7 @@ export function CharacterCreatorApp({ onConfirm }: Props) {
 				Size={new UDim2(1, 0, 0, 80)}
 				Position={new UDim2(0, 0, 0, 60)}
 				BackgroundTransparency={1}
-				Text="THE OATH OF PEACE"
+				Text="THE OATH"
 				TextColor3={Color3.fromRGB(235, 240, 255)}
 				TextScaled
 				Font={Enum.Font.GothamBold}
