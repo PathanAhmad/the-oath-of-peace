@@ -28,7 +28,7 @@ import { join } from "node:path";
 
 const PLACES = {
 	hub: 93283527222699,
-	match: 83002760593219,
+	match: 84618714551346,
 };
 
 async function loadEnv() {
