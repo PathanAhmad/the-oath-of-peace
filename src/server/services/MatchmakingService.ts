@@ -52,12 +52,14 @@ export class MatchmakingService implements OnStart {
 			classAssignments.push({ userId: member.userId, classId: member.pickedClass ?? "assault" });
 		}
 
-		const [reserveOk, reserveResult] = pcall(() => TeleportService.ReserveServer(PLACES.match));
-		if (!reserveOk || typeIs(reserveResult, "string")) {
+		const [reserveOk, accessCode, _privateServerId] = pcall(() =>
+			TeleportService.ReserveServer(PLACES.match),
+		);
+		if (!reserveOk) {
+			warn(`[Matchmaking] ReserveServer failed: ${accessCode}`);
 			this.abortLaunch(state, "Failed to reserve match server. Try again.");
 			return;
 		}
-		const [accessCode] = reserveResult as LuaTuple<[string, string]>;
 
 		const handoff: MatchHandoff = {
 			partyCode: code,
