@@ -31,6 +31,7 @@ export class UiController implements OnStart {
 	private errorClearThread?: thread;
 
 	onStart() {
+		print("[Oath] UiController mounting");
 		const playerGui = Players.LocalPlayer.WaitForChild("PlayerGui") as PlayerGui;
 		const screenGui = new Instance("ScreenGui");
 		screenGui.Name = "OathUi";
