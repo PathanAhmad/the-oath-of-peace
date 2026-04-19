@@ -1,5 +1,0 @@
-- generic [active] [ref=e1]:
-  - progressbar "loading" [ref=e5]
-  - alert [ref=e7]: /dashboard/creations/experiences/10054318861/places
-  - iframe [ref=e8]:
-    

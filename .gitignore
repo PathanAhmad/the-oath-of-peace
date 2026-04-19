@@ -68,5 +68,34 @@ assets/textures/cache/
 .cache/
 tmp/
 
+# Playwright MCP debug artifacts (page snapshots, console logs, screenshots)
+.playwright-mcp/
+# Stray snapshot files at repo root from Playwright sessions
+/*-snapshot.md
+/creds-loaded.md
+/create-key-form.md
+/api-system-dropdown.md
+/api-sys-2.md
+/after-*.md
+/places-page.md
+/post-save.md
+/risk-checked.md
+/snap-refresh.md
+/current-state.md
+/ds-*.md
+/exp-search.md
+/key-generated.md
+/mcp-docs-snapshot.md
+/ops-open.md
+/add-place.md
+/assistant-guide.md
+/assistant-location.png
+/assistant-access-section.png
+/access-assistant.png
+/credentials-page-1.png
+/dialog-open.md
+/oath.rbxlx
+/oath.rbxlx.lock
+
 # Claude Code per-user local settings (team settings.json is committed)
 .claude/settings.local.json
