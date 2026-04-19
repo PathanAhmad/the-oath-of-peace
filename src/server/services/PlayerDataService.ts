@@ -1,11 +1,13 @@
 import { OnInit, Service } from "@flamework/core";
 import ProfileStore from "@rbxts/profile-store";
 import { Players, RunService } from "@rbxts/services";
-import { PROFILE_TEMPLATE_V1, ProfileDataV1 } from "shared/types/Profile";
+import { runProfileMigrations } from "server/persistence/migrations";
+import { Appearance } from "shared/types/Appearance";
+import { PROFILE_TEMPLATE, ProfileData } from "shared/types/Profile";
 
-const STORE_NAME = "PlayerData_v1";
+const STORE_NAME = "PlayerData_v2";
 
-type ProfileInstance = ReturnType<typeof ProfileStore.New<ProfileDataV1>>["StartSessionAsync"] extends (
+type ProfileInstance = ReturnType<typeof ProfileStore.New<ProfileData>>["StartSessionAsync"] extends (
 	...args: never[]
 ) => infer R
 	? R
@@ -14,8 +16,8 @@ type ProfileInstance = ReturnType<typeof ProfileStore.New<ProfileDataV1>>["Start
 @Service()
 export class PlayerDataService implements OnInit {
 	private store = RunService.IsStudio()
-		? ProfileStore.New(STORE_NAME, PROFILE_TEMPLATE_V1).Mock
-		: ProfileStore.New(STORE_NAME, PROFILE_TEMPLATE_V1);
+		? ProfileStore.New(STORE_NAME, PROFILE_TEMPLATE).Mock
+		: ProfileStore.New(STORE_NAME, PROFILE_TEMPLATE);
 
 	private profiles = new Map<Player, ProfileInstance>();
 
@@ -39,6 +41,7 @@ export class PlayerDataService implements OnInit {
 
 		profile.AddUserId(player.UserId);
 		profile.Reconcile();
+		runProfileMigrations(profile.Data);
 
 		profile.OnSessionEnd.Connect(() => {
 			this.profiles.delete(player);
@@ -63,7 +66,7 @@ export class PlayerDataService implements OnInit {
 		if (profile) profile.EndSession();
 	}
 
-	get(player: Player): ProfileDataV1 | undefined {
+	get(player: Player): ProfileData | undefined {
 		return this.profiles.get(player)?.Data;
 	}
 
@@ -76,6 +79,13 @@ export class PlayerDataService implements OnInit {
 		if (!profile || !profile.IsActive()) return false;
 		if (profile.Data.hasCompletedCreator) return false;
 		profile.Data.hasCompletedCreator = true;
+		return true;
+	}
+
+	setAppearance(player: Player, appearance: Appearance): boolean {
+		const profile = this.profiles.get(player);
+		if (!profile || !profile.IsActive()) return false;
+		profile.Data.appearance = { ...appearance };
 		return true;
 	}
 }

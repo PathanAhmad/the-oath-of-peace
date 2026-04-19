@@ -1,5 +1,6 @@
 export const RATE_LIMITS = {
 	confirmCharacterCreated: { refillPerSec: 0.5, burst: 2 },
+	saveAppearance: { refillPerSec: 1, burst: 3 },
 	createParty: { refillPerSec: 0.5, burst: 2 },
 	joinParty: { refillPerSec: 1, burst: 3 },
 	leaveParty: { refillPerSec: 1, burst: 3 },

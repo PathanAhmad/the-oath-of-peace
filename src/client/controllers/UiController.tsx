@@ -8,12 +8,13 @@ import { HubApp } from "client/ui/HubApp";
 import { MatchApp } from "client/ui/MatchApp";
 import { PreMatchLoadoutApp } from "client/ui/PreMatchLoadoutApp";
 import { getPlaceKey } from "shared/constants/places";
+import { Appearance, DEFAULT_APPEARANCE } from "shared/types/Appearance";
 import { ClassId } from "shared/types/Class";
 import { PartyState, PreMatchReward } from "shared/types/Party";
 
 type HubScreen =
 	| { kind: "loading" }
-	| { kind: "creator" }
+	| { kind: "creator"; isFirstTime: boolean }
 	| { kind: "hub"; party: PartyState | undefined; error?: string; rewards: PreMatchReward[] };
 
 type MatchScreen = { kind: "loading" } | { kind: "match"; classId: ClassId };
@@ -29,6 +30,7 @@ export class UiController implements OnStart {
 	private rewards: PreMatchReward[] = [];
 	private lastError?: string;
 	private errorClearThread?: thread;
+	private appearance: Appearance = DEFAULT_APPEARANCE;
 
 	onStart() {
 		print("[Oath] UiController mounting");
@@ -53,15 +55,25 @@ export class UiController implements OnStart {
 
 	private bindHubEvents() {
 		Events.profileLoaded.connect((profile) => {
+			this.appearance = profile.appearance;
 			this.hubScreen = profile.hasCompletedCreator
 				? { kind: "hub", party: undefined, rewards: [] }
-				: { kind: "creator" };
+				: { kind: "creator", isFirstTime: true };
 			this.rerender();
 		});
 
 		Events.profileUpdated.connect((profile) => {
 			if (profile.hasCompletedCreator) {
 				this.hubScreen = { kind: "hub", party: undefined, rewards: [] };
+				this.rerender();
+			}
+		});
+
+		Events.appearanceUpdated.connect((appearance) => {
+			this.appearance = appearance;
+			// If creator is open as "edit mode", switch back to hub.
+			if (this.hubScreen.kind === "creator" && !this.hubScreen.isFirstTime) {
+				this.hubScreen = { kind: "hub", party: undefined, rewards: this.rewards };
 				this.rerender();
 			}
 		});
@@ -121,6 +133,16 @@ export class UiController implements OnStart {
 		});
 	}
 
+	private openEditAppearance() {
+		this.hubScreen = { kind: "creator", isFirstTime: false };
+		this.rerender();
+	}
+
+	private closeEditAppearance() {
+		this.hubScreen = { kind: "hub", party: this.party, rewards: this.rewards };
+		this.rerender();
+	}
+
 	private rerender() {
 		const playerGui = Players.LocalPlayer.WaitForChild("PlayerGui") as PlayerGui;
 		const screenGui = playerGui.FindFirstChild("OathUi") as ScreenGui | undefined;
@@ -135,15 +157,28 @@ export class UiController implements OnStart {
 	private renderScreen(placeKey: ReturnType<typeof getPlaceKey>): Roact.Element {
 		if (placeKey === "match") {
 			if (this.matchScreen.kind === "loading") return <LoadingView label="Joining match…" />;
-			return (
-				<MatchApp classId={this.matchScreen.classId} onEndMatch={() => Events.endMatch.fire()} />
-			);
+			return <MatchApp classId={this.matchScreen.classId} onEndMatch={() => Events.endMatch.fire()} />;
 		}
 
-		// Hub place (default)
+		// Hub place
 		if (this.hubScreen.kind === "loading") return <LoadingView label="Loading profile…" />;
+
 		if (this.hubScreen.kind === "creator") {
-			return <CharacterCreatorApp onConfirm={() => Events.confirmCharacterCreated.fire()} />;
+			const isFirstTime = this.hubScreen.isFirstTime;
+			return (
+				<CharacterCreatorApp
+					initial={this.appearance}
+					isFirstTime={isFirstTime}
+					onSave={(appearance) => {
+						this.appearance = appearance;
+						Events.saveAppearance.fire(appearance);
+						if (isFirstTime) {
+							Events.confirmCharacterCreated.fire();
+						}
+					}}
+					onCancel={isFirstTime ? undefined : () => this.closeEditAppearance()}
+				/>
+			);
 		}
 
 		const party = this.hubScreen.party;
@@ -166,6 +201,7 @@ export class UiController implements OnStart {
 				onJoinParty={(code) => Events.joinParty.fire(code)}
 				onLeaveParty={() => Events.leaveParty.fire()}
 				onToggleReady={() => Events.toggleReady.fire()}
+				onEditAppearance={() => this.openEditAppearance()}
 			/>
 		);
 	}
@@ -173,11 +209,7 @@ export class UiController implements OnStart {
 
 function LoadingView({ label }: { label: string }) {
 	return (
-		<frame
-			Size={new UDim2(1, 0, 1, 0)}
-			BackgroundColor3={Color3.fromRGB(8, 12, 24)}
-			BorderSizePixel={0}
-		>
+		<frame Size={new UDim2(1, 0, 1, 0)} BackgroundColor3={Color3.fromRGB(8, 12, 24)} BorderSizePixel={0}>
 			<textlabel
 				Size={new UDim2(1, 0, 0, 40)}
 				Position={new UDim2(0, 0, 0.5, -20)}

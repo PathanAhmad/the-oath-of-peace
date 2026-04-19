@@ -1,10 +1,12 @@
 import { Networking } from "@flamework/networking";
+import { Appearance } from "./types/Appearance";
 import { ClassId } from "./types/Class";
 import { PartyState, PreMatchReward } from "./types/Party";
 
 interface ClientToServerEvents {
 	// character creator (Slice 1)
 	confirmCharacterCreated(): void;
+	saveAppearance(appearance: Appearance): void;
 
 	// party lifecycle (Slice 2)
 	createParty(): void;
@@ -20,8 +22,9 @@ interface ClientToServerEvents {
 
 interface ServerToClientEvents {
 	// character creator
-	profileLoaded(profile: { hasCompletedCreator: boolean }): void;
+	profileLoaded(profile: { hasCompletedCreator: boolean; appearance: Appearance }): void;
 	profileUpdated(profile: { hasCompletedCreator: boolean }): void;
+	appearanceUpdated(appearance: Appearance): void;
 
 	// party lifecycle
 	partyUpdated(party: PartyState | undefined): void;

@@ -52,9 +52,7 @@ export class MatchmakingService implements OnStart {
 			classAssignments.push({ userId: member.userId, classId: member.pickedClass ?? "assault" });
 		}
 
-		const [reserveOk, accessCode, _privateServerId] = pcall(() =>
-			TeleportService.ReserveServer(PLACES.match),
-		);
+		const [reserveOk, accessCode, _privateServerId] = pcall(() => TeleportService.ReserveServer(PLACES.match));
 		if (!reserveOk) {
 			warn(`[Matchmaking] ReserveServer failed: ${accessCode}`);
 			this.abortLaunch(state, "Failed to reserve match server. Try again.");

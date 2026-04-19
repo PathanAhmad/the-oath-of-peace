@@ -29,7 +29,10 @@ export class CharacterCreatorService implements OnStart {
 		}
 		const data = this.playerData.get(player);
 		if (!data) return;
-		Events.profileLoaded.fire(player, { hasCompletedCreator: data.hasCompletedCreator });
+		Events.profileLoaded.fire(player, {
+			hasCompletedCreator: data.hasCompletedCreator,
+			appearance: data.appearance,
+		});
 	}
 
 	private handleConfirm(player: Player) {

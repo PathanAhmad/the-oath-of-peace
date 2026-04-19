@@ -9,9 +9,18 @@ interface Props {
 	onJoinParty: (code: string) => void;
 	onLeaveParty: () => void;
 	onToggleReady: () => void;
+	onEditAppearance: () => void;
 }
 
-export function HubApp({ party, errorMessage, onCreateParty, onJoinParty, onLeaveParty, onToggleReady }: Props) {
+export function HubApp({
+	party,
+	errorMessage,
+	onCreateParty,
+	onJoinParty,
+	onLeaveParty,
+	onToggleReady,
+	onEditAppearance,
+}: Props) {
 	const [joinCode, setJoinCode] = useState("");
 
 	return (
@@ -39,6 +48,22 @@ export function HubApp({ party, errorMessage, onCreateParty, onJoinParty, onLeav
 				/>
 			) : (
 				<PartyPanel party={party} onLeaveParty={onLeaveParty} onToggleReady={onToggleReady} />
+			)}
+
+			{party === undefined && (
+				<textbutton
+					Size={new UDim2(0, 200, 0, 36)}
+					Position={new UDim2(1, -220, 1, -56)}
+					BackgroundColor3={Color3.fromRGB(30, 36, 56)}
+					BorderSizePixel={0}
+					Text="Edit Appearance"
+					TextColor3={Color3.fromRGB(200, 210, 240)}
+					TextScaled
+					Font={Enum.Font.Gotham}
+					Event={{ Activated: () => onEditAppearance() }}
+				>
+					<uicorner CornerRadius={new UDim(0, 6)} />
+				</textbutton>
 			)}
 
 			{errorMessage !== undefined && (
